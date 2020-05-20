@@ -2,5 +2,5 @@
 
 ```bash
 brew install raylib
-gcc -E raylib/src/raylib.h > raylib.h
+luajit generate.lua > raylib.lua
 ```
