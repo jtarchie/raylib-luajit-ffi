@@ -1296,97 +1296,67 @@ typedef void (*TraceLogCallback)(int logType, const char *text, va_list args);
 
 ]])
 
-local rl = setmetatable({}, {__index = lib})
+local rl = setmetatable({}, {
+    __index = lib
+})
 rl.PI = 3.14159265358979323846
-rl.LIGHTGRAY = {200, 200, 200, 255} -- Light Gray
-rl.GRAY = {130, 130, 130, 255} -- Gray
-rl.DARKGRAY = {80, 80, 80, 255} -- Dark Gray
-rl.YELLOW = {253, 249, 0, 255} -- Yellow
-rl.GOLD = {255, 203, 0, 255} -- Gold
-rl.ORANGE = {255, 161, 0, 255} -- Orange
-rl.PINK = {255, 109, 194, 255} -- Pink
-rl.RED = {230, 41, 55, 255} -- Red
-rl.MAROON = {190, 33, 55, 255} -- Maroon
-rl.GREEN = {0, 228, 48, 255} -- Green
-rl.LIME = {0, 158, 47, 255} -- Lime
-rl.DARKGREEN = {0, 117, 44, 255} -- Dark Green
-rl.SKYBLUE = {102, 191, 255, 255} -- Sky Blue
-rl.BLUE = {0, 121, 241, 255} -- Blue
-rl.DARKBLUE = {0, 82, 172, 255} -- Dark Blue
-rl.PURPLE = {200, 122, 255, 255} -- Purple
-rl.VIOLET = {135, 60, 190, 255} -- Violet
-rl.DARKPURPLE = {112, 31, 126, 255} -- Dark Purple
-rl.BEIGE = {211, 176, 131, 255} -- Beige
-rl.BROWN = {127, 106, 79, 255} -- Brown
-rl.DARKBROWN = {76, 63, 47, 255} -- Dark Brown
+rl.LIGHTGRAY  = { 200, 200, 200, 255 }   -- Light Gray
+rl.GRAY       = { 130, 130, 130, 255 }   -- Gray
+rl.DARKGRAY   = { 80, 80, 80, 255 }      -- Dark Gray
+rl.YELLOW     = { 253, 249, 0, 255 }     -- Yellow
+rl.GOLD       = { 255, 203, 0, 255 }     -- Gold
+rl.ORANGE     = { 255, 161, 0, 255 }     -- Orange
+rl.PINK       = { 255, 109, 194, 255 }   -- Pink
+rl.RED        = { 230, 41, 55, 255 }     -- Red
+rl.MAROON     = { 190, 33, 55, 255 }     -- Maroon
+rl.GREEN      = { 0, 228, 48, 255 }      -- Green
+rl.LIME       = { 0, 158, 47, 255 }      -- Lime
+rl.DARKGREEN  = { 0, 117, 44, 255 }      -- Dark Green
+rl.SKYBLUE    = { 102, 191, 255, 255 }   -- Sky Blue
+rl.BLUE       = { 0, 121, 241, 255 }     -- Blue
+rl.DARKBLUE   = { 0, 82, 172, 255 }      -- Dark Blue
+rl.PURPLE     = { 200, 122, 255, 255 }   -- Purple
+rl.VIOLET     = { 135, 60, 190, 255 }    -- Violet
+rl.DARKPURPLE = { 112, 31, 126, 255 }    -- Dark Purple
+rl.BEIGE      = { 211, 176, 131, 255 }   -- Beige
+rl.BROWN      = { 127, 106, 79, 255 }    -- Brown
+rl.DARKBROWN  = { 76, 63, 47, 255 }      -- Dark Brown
+rl.WHITE      = { 255, 255, 255, 255 }   -- White
+rl.BLACK      = { 0, 0, 0, 255 }         -- Black
+rl.BLANK      = { 0, 0, 0, 0 }           -- Blank (Transparent)
+rl.MAGENTA    = { 255, 0, 255, 255 }     -- Magenta
+rl.RAYWHITE   = { 245, 245, 245, 255 }   -- My own White (raylib logo)
 
-rl.WHITE = {255, 255, 255, 255} -- White
-rl.BLACK = {0, 0, 0, 255} -- Black
-rl.BLANK = {0, 0, 0, 0} -- Blank (Transparent)
-rl.MAGENTA = {255, 0, 255, 255} -- Magenta
-rl.RAYWHITE = {245, 245, 245, 255} -- My own White (raylib logo)
-
-rl["Vector2"] = ffi.metatype("Vector2", {})
-
-rl["Vector3"] = ffi.metatype("Vector3", {})
-
-rl["Vector4"] = ffi.metatype("Vector4", {})
-
-rl["Matrix"] = ffi.metatype("Matrix", {})
-
-rl["Color"] = ffi.metatype("Color", {})
-
-rl["Rectangle"] = ffi.metatype("Rectangle", {})
-
-rl["Image"] = ffi.metatype("Image", {})
-
-rl["Texture2D"] = ffi.metatype("Texture2D", {})
-
-rl["RenderTexture2D"] = ffi.metatype("RenderTexture2D", {})
-
-rl["NPatchInfo"] = ffi.metatype("NPatchInfo", {})
-
-rl["CharInfo"] = ffi.metatype("CharInfo", {})
-
-rl["Font"] = ffi.metatype("Font", {})
-
-rl["Camera3D"] = ffi.metatype("Camera3D", {})
-
-rl["Camera2D"] = ffi.metatype("Camera2D", {})
-
-rl["Mesh"] = ffi.metatype("Mesh", {})
-
-rl["Shader"] = ffi.metatype("Shader", {})
-
-rl["MaterialMap"] = ffi.metatype("MaterialMap", {})
-
-rl["Material"] = ffi.metatype("Material", {})
-
-rl["Transform"] = ffi.metatype("Transform", {})
-
-rl["BoneInfo"] = ffi.metatype("BoneInfo", {})
-
-rl["Model"] = ffi.metatype("Model", {})
-
-rl["ModelAnimation"] = ffi.metatype("ModelAnimation", {})
-
-rl["Ray"] = ffi.metatype("Ray", {})
-
-rl["RayHitInfo"] = ffi.metatype("RayHitInfo", {})
-
-rl["BoundingBox"] = ffi.metatype("BoundingBox", {})
-
-rl["Wave"] = ffi.metatype("Wave", {})
-
-rl["rAudioBuffer"] = ffi.metatype("rAudioBuffer", {})
-
-rl["AudioStream"] = ffi.metatype("AudioStream", {})
-
-rl["Sound"] = ffi.metatype("Sound", {})
-
-rl["Music"] = ffi.metatype("Music", {})
-
-rl["VrDeviceInfo"] = ffi.metatype("VrDeviceInfo", {})
-
-return rl
+rl["Vector2"] = ffi.metatype("Vector2",{})
+rl["Vector3"] = ffi.metatype("Vector3",{})
+rl["Vector4"] = ffi.metatype("Vector4",{})
+rl["Matrix"] = ffi.metatype("Matrix",{})
+rl["Color"] = ffi.metatype("Color",{})
+rl["Rectangle"] = ffi.metatype("Rectangle",{})
+rl["Image"] = ffi.metatype("Image",{})
+rl["Texture2D"] = ffi.metatype("Texture2D",{})
+rl["RenderTexture2D"] = ffi.metatype("RenderTexture2D",{})
+rl["NPatchInfo"] = ffi.metatype("NPatchInfo",{})
+rl["CharInfo"] = ffi.metatype("CharInfo",{})
+rl["Font"] = ffi.metatype("Font",{})
+rl["Camera3D"] = ffi.metatype("Camera3D",{})
+rl["Camera2D"] = ffi.metatype("Camera2D",{})
+rl["Mesh"] = ffi.metatype("Mesh",{})
+rl["Shader"] = ffi.metatype("Shader",{})
+rl["MaterialMap"] = ffi.metatype("MaterialMap",{})
+rl["Material"] = ffi.metatype("Material",{})
+rl["Transform"] = ffi.metatype("Transform",{})
+rl["BoneInfo"] = ffi.metatype("BoneInfo",{})
+rl["Model"] = ffi.metatype("Model",{})
+rl["ModelAnimation"] = ffi.metatype("ModelAnimation",{})
+rl["Ray"] = ffi.metatype("Ray",{})
+rl["RayHitInfo"] = ffi.metatype("RayHitInfo",{})
+rl["BoundingBox"] = ffi.metatype("BoundingBox",{})
+rl["Wave"] = ffi.metatype("Wave",{})
+rl["rAudioBuffer"] = ffi.metatype("rAudioBuffer",{})
+rl["AudioStream"] = ffi.metatype("AudioStream",{})
+rl["Sound"] = ffi.metatype("Sound",{})
+rl["Music"] = ffi.metatype("Music",{})
+rl["VrDeviceInfo"] = ffi.metatype("VrDeviceInfo",{})
+    return rl
 
